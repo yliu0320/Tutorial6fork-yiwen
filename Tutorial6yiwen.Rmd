@@ -1,0 +1,32 @@
+---
+title: "Tutorial 6 Collaborating with others"
+author: "Yiwen Liu"
+date: "4/14/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,fig.width = 8, fig.height = 8, fig.alig = "center")
+```
+
+# Libraries
+
+```{r}
+library(tidyverse)
+library(gridExtra)
+```
+
+# Generating data from a normal distribution with mean 0 and variance 1
+
+```{r}
+# Simulating data according to a normal distribution
+x <- seq(1:100)
+y <- rnorm(100) # Generating data form a normal distribution with mean 0 and variance 1
+data <- data.frame(x = x, y = y ) # Creating a data frame
+p1 = ggplot(data, aes(x= x, y = y)) +
+geom_line()
+p2 = ggplot(data, aes(x= x, y = y)) +
+geom_point()
+grid.arrange(p1, p2)
+```
+
